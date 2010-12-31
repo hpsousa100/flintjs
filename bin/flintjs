@@ -102,6 +102,7 @@ def do_update(options):
   outf.write(local_prop_out)
   outf.close()
 
+
 def do_create(options):
   # Generate project skeleton
   template_params = dict(flintjs_dir=FLINTJS_DIR)
