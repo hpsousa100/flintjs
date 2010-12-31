@@ -1,0 +1,9 @@
+\.DS_Store
+jsbuildtasks/JsBuildTasks\.jar
+jsbuildtasks/classes
+lib/jscoverage
+.*\.iml
+.*\.ipr
+.*\.iws
+local\.properties
+art
