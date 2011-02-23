@@ -1,5 +1,5 @@
 /*
-Copyright 2010 Google Inc.
+Copyright 2011 Google Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,8 +14,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * A custom Ant task that isolates inline JavaScript tests demarcated with //#BEGIN_TEST and
@@ -50,7 +59,8 @@ public class BuildTaskHelpers {
     }
 
     /**
-     * A private class that handles dependency graph related functionality (i.e. topological sorts).
+     * A private class that handles dependency graph related functionality (i.e. topological
+     * sorts).
      */
     public static class DependencyGraph<T> {
         public static class FoundCycleException extends Exception {
