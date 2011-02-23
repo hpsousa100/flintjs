@@ -10,17 +10,7 @@ OUT_DIR=flintjs-${VERSION}
 # copy all relevant files into an out directory
 rm -rf ${OUT_DIR}
 mkdir ${OUT_DIR}
-cp -rf README bin jsbuildtasks lib template ${OUT_DIR}
-
-# compile jsbuildtasks and remove everything but the JAR
-cd ${OUT_DIR}/jsbuildtasks
-ant
-mv JsBuildTasks.jar ..
-cd ..
-rm -rf jsbuildtasks
-mkdir jsbuildtasks
-mv JsBuildTasks.jar jsbuildtasks/
-cd ..
+cp -rf README bin flintjs.build.xml jsbuildtasks lib template ${OUT_DIR}
 
 # remove unnecessary files
 find ${OUT_DIR} -iname .DS_Store -exec rm {} \;
